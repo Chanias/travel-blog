@@ -1,0 +1,538 @@
+/* ************ général *********** */
+
+body {
+  display: grid;
+  margin: 0;
+  text-align: center;
+  grid-template-columns: 35vw 1fr;
+  grid-template-rows: 50vh 15vh 100vh repeat(5, auto) 25vh;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+   "card-bali card-bali"
+   "aside derniersArticles"
+    "aside article1"
+    "aside article2"
+    "aside article3"
+    "partenaires partenaires"
+    "footer footer";
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  place-self: center;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #f2f7ba;
+  color: #2b80b9;
+  margin: 10px;
+  border: 3px solid white;
+  font-size: 1.2em;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #2b80b9;
+  color: #f2f7ba;
+  transition: 0.5s;
+}
+
+
+
+h2 {
+  margin-bottom: -10px;
+}
+
+h2:after {
+  color: white;
+  display: block;
+  height: 4px;
+  background-color: yellow;
+  width: 10em;
+  content: " ";
+  margin: 15px auto;
+}
+.auteurs {
+  font-size: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.auteurs img {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  filter: brightness(1.2);
+}
+
+.auteurs span {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.auteurs span i {
+  color: #2b80b9;
+  margin-right: 5px;
+}
+/* ************ header *********** */
+
+header {
+  grid-area: header;
+  display: grid;
+  background-image: linear-gradient(
+      rgba(116, 230, 214, 0.4),
+      rgba(250, 247, 48, 0.3)
+    ),
+    url(images/beach.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#hamburger {
+  display: none;
+  margin-left: 10px;
+}
+
+#navbarTitle {
+  display: none;
+}
+
+#titles {
+  color: white;
+  align-self: center;
+  justify-self: center;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: -1rem;
+}
+
+header h3 {
+  color: white;
+}
+
+/* ************ navbar *********** */
+
+nav {
+  color: #2b80b9;
+  grid-area: nav;
+  display: grid;
+  background-color: #f2f7ba;
+}
+
+#navigationLinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+/*BALI*/
+#card-bali {
+  grid-area: card-bali;
+  display: grid;
+  grid-template-columns: 5vw repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-image: linear-gradient(
+      rgba(116, 230, 214, 0.4),
+      rgba(250, 247, 48, 0.3)
+    ),
+    url(images/bali.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  
+}
+
+#bali {
+  border-radius: 20px;
+  display: grid;
+  grid-row: 2;
+  grid-column: 2;
+  background-color: #2b80b9;
+  padding: 1em;
+  margin: 1em 1em;
+}
+/*LES + POPULAIRES*/
+aside {
+  grid-area: aside;
+  background-color: #2b80b9;
+  color: white;
+  padding: 2rem;
+}
+
+aside img:hover {
+  filter: contrast(150%);
+}
+
+aside h2 {
+  margin-bottom: 1em;
+}
+
+aside .auteurs span {
+  margin-left: 10px;
+}
+
+aside .auteurs span i {
+  color: white;
+}
+
+.les_destinations {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 2px solid #f2f7ba;
+  box-shadow: 5px 5px 5px #f2f7ba;
+}
+
+.les_destinationsImage {
+  width: 20vw;
+  height: 13vw;
+  border: 5px solid white;
+  margin-bottom: 1em;
+}
+
+.note {
+  font-size: 1.3em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*LES DERNIERS ARTICLES*/
+article h2 {
+  color: #2b80b9;
+}
+
+article img:hover {
+  filter: contrast(150%);
+}
+
+#derniersArticles i {
+  color: #2b80b9;
+}
+
+.derniersArticlesImage{
+  width: 15vw;
+  height: 10vw;
+  padding: 1em;
+}
+
+article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+#derniersArticles {
+  grid-area: derniersArticles;
+  padding-top: 1em;
+}
+
+#article1 {
+  grid-area: article1;
+}
+
+#article2 {
+  grid-area: article2;
+}
+
+#article3 {
+  grid-area: article3;
+}
+
+article:after {
+  color: white;
+  height: 2px;
+  background-color: #2b80b9;
+  width: 50em;
+  content: " ";
+  margin: 10px auto;
+}
+
+.articleimage {
+  width: 35vw;
+  border: 5px solid #f2f7ba;
+}
+
+article p {
+  padding: 3vw;
+}
+/*LES PARTENAIRES*/
+#partenaires {
+  grid-area: partenaires;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr;
+}
+
+#presentation_images {
+  background-image: linear-gradient(
+      rgba(116, 230, 214, 0.4),
+      rgba(250, 247, 48, 0.3)
+    ),
+    url(images/plane.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-column: span 3;
+  grid-row: 1;
+  color: white;
+}
+
+#partenaires i {
+  padding-top: 20px;
+  color: #2b80b9;
+}
+
+#partenaires img {
+  width: 13vw;
+  transition: 0.5s;
+}
+
+#partenaires h2 {
+  color: #2b80b9;
+}
+
+#partenaires img:hover {
+  filter: brightness(1.2);
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+#compagnies_avions {
+  background-color: #2b80b9;
+  color: white;
+  grid-column: span 3;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+}
+/*FOOTER*/
+footer {
+  grid-area: footer;
+  display: grid;
+  justify-items: center;
+  background-color: #f2f7ba;
+  color: #2b80b9;
+}
+
+footer p {
+  align-self: end;
+}
+
+footer ul {
+  align-self: start;
+  display: flex;
+  list-style: none;
+  margin-left: -15px;
+}
+
+footer li {
+  margin-right: 1em;
+}
+
+footer li i {
+  transition: 0.3s;
+}
+
+footer li i:hover {
+  color: black;
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+/* ************ media queries *********** */
+
+/* 1) règles communes aux mobiles + tablettes */
+
+@media screen and (max-width: 991px) {
+  #hamburger {
+    color: #2b80b9;
+    display: block;
+    text-align: left;
+    margin: 20px 20px;
+  }
+
+  #navbarTitle {
+    display: block;
+    margin: 20px 40px;
+  }
+
+  #hamburgerAndTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #hamburgerAndTitle h2 {
+    margin: 0 auto;
+    margin-top: 23px;
+  }
+
+  nav {
+    width: 100vw;
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f2f7ba;
+    opacity: 90%;
+  }
+
+  #navigationLinks {
+    padding-bottom: 20px;
+  }
+
+  #card-bali {
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-image: linear-gradient(
+        rgba(116, 230, 214, 0.4),
+        rgba(250, 247, 48, 0.3)
+      ),
+      url(./images/bali.jpg);
+    background-position: center;
+    color: white;
+    background-attachment: unset;
+  }
+
+  #bali {
+    margin: -1em -1em -2em -2em;
+    grid-column: 2;
+  }
+
+  aside h3 {
+    font-size: 1.7em;
+  }
+}
+
+/* 2) mobiles uniquement */
+
+@media screen and (max-width: 767px) {
+  body {
+    grid-template-columns: 100vw;
+    grid-template-rows: 50vh 100vh auto;
+    grid-template-areas:
+    "header"
+    "card-bali"
+    "derniersArticles"
+    "article1"
+    "article2"
+    "article3"
+    "aside"
+    "partenaires"
+    "footer";
+  }
+
+  #navigationLinks {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .les_destinationsImage,
+  .articleimage,
+  .derniersArticlesImage{
+    width: 80vw;
+    height: auto;
+  }
+
+  #derniersArticles,
+  #article1,
+  #article2,
+  #article3 {
+    display: grid;
+    grid-template-columns: 100vw;
+  }
+
+  .auteurs {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .auteurs img {
+    margin: 0 auto;
+  }
+
+  article span {
+    margin: 0 auto;
+  }
+
+  #partenaires {
+    grid-area: partenaires;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 50vh auto;
+  }
+
+  #partenaires img {
+    width: 30vw;
+  }
+
+  #compagnies {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+
+/* 3) tablettes uniquement */
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40vh 100vh auto;
+    grid-template-areas:
+    "header "
+    "card-bali "
+    "aside derniersArticles"
+    "aside article1"
+    "aside article2"
+    "aside article3"
+    "partenaires "
+    "footer ";
+  }
+
+  .les_destinations {
+    margin-bottom: 2em;
+  }
+
+  .les_destinationsImage,
+  .derniersArticlesImage {
+    width: 30vw;
+    height: auto;
+  }
+
+  .articleimage {
+    width: 40vw;
+    height: auto;
+  }
+
+  aside {
+    display: grid;
+  }
+
+  article {
+    grid-template-columns: 50vw;
+    padding: 1em;
+    margin: auto;
+  }
+}
