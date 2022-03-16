@@ -259,8 +259,8 @@ article:after {
 }
 
 .articleimage {
-  width: 35vw;
-  border: 5px solid #f2f7ba;
+  margin-left: 15em;
+    width: 30vw;
 }
 
 article p {
@@ -449,10 +449,12 @@ footer li i:hover {
   }
 
   .les_destinationsImage,
-  .articleimage,
   .derniersArticlesImage{
     width: 80vw;
     height: auto;
+  }
+  .articleimage{
+    width:30vw;
   }
 
   #derniersArticles,
